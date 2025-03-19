@@ -110,6 +110,7 @@ float temp=0;
 float promhr=0;
 float SpO2=0;
 float promrr=0;
+char fecha[20];
 
 void setup() {
   pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
