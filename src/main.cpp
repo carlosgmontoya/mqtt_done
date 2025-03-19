@@ -133,24 +133,24 @@ void loop() {
     temp = temp + 0.1;
     promhr= promhr + 0.1;
     SpO2 = SpO2 + 0.1;
-    promrr= promhr + 0.1;
+    promrr= promrr + 0.1;
 
 
-    snprintf (msg_temp, MSG_BUFFER_SIZE, "Temp: %.2f", temp);
+    snprintf (msg_temp, MSG_BUFFER_SIZE, "%.2f", temp);
     Serial.println(msg_temp);
-    client.publish("test/monitor/temp", msg_temp);
+    client.publish("temp", msg_temp);
 
-    snprintf (msg_bpm, MSG_BUFFER_SIZE, "BPM: %.2f", promhr);
+    snprintf (msg_bpm, MSG_BUFFER_SIZE, "%.2f", promhr);
     Serial.println(msg_bpm);
-    client.publish("test/monitor/bpm", msg_bpm);
+    client.publish("bpm", msg_bpm);
 
-    snprintf (msg_spo2, MSG_BUFFER_SIZE, "SpO2: %.2f", SpO2);
+    snprintf (msg_spo2, MSG_BUFFER_SIZE, "%.2f", SpO2);
     Serial.println(msg_spo2);
-    client.publish("test/monitor/spo2", msg_spo2);
+    client.publish("spo2", msg_spo2);
 
-    snprintf (msg_rr, MSG_BUFFER_SIZE, "RR: %.2f", promrr);
+    snprintf (msg_rr, MSG_BUFFER_SIZE, "%.2f", promrr);
     Serial.println(msg_rr);
-    client.publish("test/monitor/rr", msg_rr);
+    client.publish("rr", msg_rr);
 
   }
 }
